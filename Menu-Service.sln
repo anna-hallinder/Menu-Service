@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuService.Api", "MenuServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuService.Application", "MenuService.Application\MenuService.Application.csproj", "{492D192C-5049-42AB-B2D9-9045FE81E51D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuService.Domain", "MenuService.Domain\MenuService.Domain.csproj", "{D8E109DF-12ED-4B49-A483-D19DFF04EC69}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuService.Core", "MenuService.Core\MenuService.Core.csproj", "{23FCEB4E-BF75-405B-AF10-36B924FDC5E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuService.Infrastructure", "MenuService.Infrastructure\MenuService.Infrastructure.csproj", "{E70C16C0-FAE5-4042-A206-C33014CBBFED}"
@@ -27,10 +25,6 @@ Global
 		{492D192C-5049-42AB-B2D9-9045FE81E51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{492D192C-5049-42AB-B2D9-9045FE81E51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{492D192C-5049-42AB-B2D9-9045FE81E51D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8E109DF-12ED-4B49-A483-D19DFF04EC69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8E109DF-12ED-4B49-A483-D19DFF04EC69}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8E109DF-12ED-4B49-A483-D19DFF04EC69}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8E109DF-12ED-4B49-A483-D19DFF04EC69}.Release|Any CPU.Build.0 = Release|Any CPU
 		{23FCEB4E-BF75-405B-AF10-36B924FDC5E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23FCEB4E-BF75-405B-AF10-36B924FDC5E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23FCEB4E-BF75-405B-AF10-36B924FDC5E8}.Release|Any CPU.ActiveCfg = Release|Any CPU

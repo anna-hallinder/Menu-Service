@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="InterfacesServices\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MenuService.Core\MenuService.Core.csproj" />
+    <ProjectReference Include="..\MenuService.Infrastructure\MenuService.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
