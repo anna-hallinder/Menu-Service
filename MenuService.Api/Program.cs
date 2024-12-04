@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Lägg till EF Core InMemory Database
 builder.Services.AddDbContext<PizzaDbContext>(options =>
-    options.UseInMemoryDatabase("TestDb"));
+    options.UseSqlServer("MenuServiceDb"));
 
 
 
