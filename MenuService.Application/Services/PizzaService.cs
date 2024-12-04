@@ -13,6 +13,7 @@ public class PizzaService : GenericService<PizzaEntity, int>, IPizzaService
         _unitOfWork = unitOfWork;
     }
 
+
     public async Task<PizzaEntity?> GetPizzaByNameAsync(string name)
     {
         return await _unitOfWork.Pizzas.GetPizzaByNameAsync(name);

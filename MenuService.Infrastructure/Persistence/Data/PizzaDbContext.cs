@@ -21,15 +21,18 @@ public class PizzaDbContext : DbContext
             .HasMaxLength(100);
 
         modelBuilder.Entity<PizzaEntity>()
-            .Property(p => p.Ingredients)
-            .IsRequired();
-
-        modelBuilder.Entity<PizzaEntity>()
             .Property(p => p.Price)
             .IsRequired()
             .HasPrecision(10, 2);
 
-        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<PizzaEntity>()
+            .Property(p => p.Ingredients)
+            .HasConversion(
+                v => string.Join(',', v), // Konvertera från List<string> till sträng
+                v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList() // Konvertera från sträng till List<string>
+            )
+            .IsRequired();
     }
-}
 
+
+}
