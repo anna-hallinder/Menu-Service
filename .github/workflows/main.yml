@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0' # Använd rätt version
+          dotnet-version: "8.0" # Använd rätt version
 
       # Restore dependencies
       - name: Restore dependencies
