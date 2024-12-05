@@ -6,7 +6,9 @@ WORKDIR /src
 COPY ["MenuService.Api/MenuService.Api.csproj", "MenuService.Api/"]
 COPY ["MenuService.Application/MenuService.Application.csproj", "MenuService.Application/"]
 COPY ["MenuService.Core/MenuService.Core.csproj", "MenuService.Core/"]
-COPY ["MenuService.Infrastructure/MenuService.Infrastructure.csproj", "MenuService.Infrastructure./"]
+COPY ["MenuService.Infrastructure/MenuService.Infrastructure.csproj", "MenuService.Infrastructure/"]
+
+
 
 RUN dotnet restore "MenuService.Api/MenuService.Api.csproj"
 

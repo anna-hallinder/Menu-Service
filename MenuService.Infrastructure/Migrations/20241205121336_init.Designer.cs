@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MenuService.Infrastructure.Migrations
 {
     [DbContext(typeof(PizzaDbContext))]
-    [Migration("20241204151126_init")]
+    [Migration("20241205121336_init")]
     partial class init
     {
         /// <inheritdoc />

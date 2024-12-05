@@ -13,10 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Lägg till EF Core InMemory Database
 builder.Services.AddDbContext<PizzaDbContext>(options =>
-    options.UseSqlServer("MenuServiceDb"));
-
-
-
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -34,30 +31,30 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<PizzaDbContext>();
+//using (var scope = app.Services.CreateScope())
+//{
+//    var dbContext = scope.ServiceProvider.GetRequiredService<PizzaDbContext>();
 
-    // Lägg till exempeldata
-    dbContext.Pizzas.AddRange(
-        new PizzaEntity
-        {
-            Id = 1,
-            Name = "Margherita",
-            Price = 100,
-            Ingredients = new List<string> { "Tomato", "Cheese" } // Konvertera till lista
-        },
-        new PizzaEntity
-        {
-            Id = 2,
-            Name = "Pepperoni",
-            Price = 120,
-            Ingredients = new List<string> { "Tomato", "Cheese", "Pepperoni" } // Konvertera till lista
-        }
-    );
+//    // Lägg till exempeldata
+//    dbContext.Pizzas.AddRange(
+//        new PizzaEntity
+//        {
+//            Id = 1,
+//            Name = "Margherita",
+//            Price = 100,
+//            Ingredients = new List<string> { "Tomato", "Cheese" } // Konvertera till lista
+//        },
+//        new PizzaEntity
+//        {
+//            Id = 2,
+//            Name = "Pepperoni",
+//            Price = 120,
+//            Ingredients = new List<string> { "Tomato", "Cheese", "Pepperoni" } // Konvertera till lista
+//        }
+//    );
 
-    dbContext.SaveChanges();
-}
+//    dbContext.SaveChanges();
+//}
 
 
 
