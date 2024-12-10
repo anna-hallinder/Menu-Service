@@ -1,19 +1,27 @@
-version: '3.9'
+version: "3.9"
 services:
-  api:
-    build:
-      context: ./MenuService.Api
-    ports:
-      - "5000:5000"
-    depends_on:
-      - sqlserver
-    environment:
-      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=MenuServiceDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True;
-
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2019-latest
-    environment:
-      ACCEPT_EULA: "Y"
-      SA_PASSWORD: "Your_password123"
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
     ports:
       - "1433:1433"
+    environment:
+      SA_PASSWORD: "SuperSafePass.123"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+  menu-service:
+    build:
+      context: .
+      dockerfile: ./MenuService.Api/Dockerfile
+    container_name: MenuService
+    ports:
+      - "8080:8080"
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=db;Database=MenuDb;User Id=sa;Password=SuperSafePass.123;TrustServerCertificate=True;"
+    depends_on:
+      - db
+
+volumes:
+  sqlserver_data:

@@ -18,13 +18,6 @@ COPY . .
 # Build all projects
 RUN dotnet build "MenuService.Api/MenuService.Api.csproj" -c Release
 
-# Stage 2: Run tests
-#FROM build AS test
-#WORKDIR /src/WebShopTests
-
-# Run tests and ensure they pass
-#RUN dotnet test "WebShopTests.csproj" --no-build --logger:trx --results-directory /src/TestResults
-
 # Stage 3: Publish WebShop (only proceeds if tests pass)
 FROM build AS publish
 WORKDIR /src/MenuService.Api
