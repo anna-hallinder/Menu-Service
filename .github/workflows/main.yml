@@ -29,7 +29,7 @@ jobs:
       # Step 4: Build Docker Image
       - name: Build Docker Image
         run: |
-          IMAGE_NAME="elzzup/menu-service"
+          IMAGE_NAME="${{ secrets.DOCKER_USERNAME }}/menu-service"
           docker build -t $IMAGE_NAME:${{ env.TAG_NAME }} -f MenuService.Api/Dockerfile .
 
       # Step 5: Push Docker Image to Registry
