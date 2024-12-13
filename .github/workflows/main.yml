@@ -36,5 +36,5 @@ jobs:
       # Step 5: Push Docker Image to Registry
       - name: Push Docker Image
         run: |
-          IMAGE_NAME="elzzup/menu-service"
+          IMAGE_NAME="ellzup/menu-service"
           docker push $IMAGE_NAME:${{ env.TAG_NAME }}
