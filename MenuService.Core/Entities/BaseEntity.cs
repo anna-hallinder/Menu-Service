@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace MenuService.Core.Entities;
+﻿namespace MenuService.Core.Entities;
 
 public abstract class BaseEntity<TId>
 {

@@ -2,7 +2,6 @@
 using MenuService.Core.InterfacesRepositories;
 using MenuService.Infrastructure.Persistence.Data;
 using MenuService.Infrastructure.Persistence.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace MenuService.Infrastructure.Persistence.UnitOfWork;
 
